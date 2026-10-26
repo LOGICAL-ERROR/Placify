@@ -57,6 +57,10 @@ function AppContent() {
   const isAdminUser = isSuperAdmin((user?.email || '').toLowerCase().trim()) || profile?.role === 'admin'
   const activeDashboardRole = (isAdminUser ? localStorage.getItem('placify_active_role') || 'admin' : profile?.role || 'student').toLowerCase().trim()
   const isStudentDashboard = location.pathname === '/dashboard' && (activeDashboardRole === 'student' || activeDashboardRole === 'learner')
+  const isStudentClassroom = location.pathname === '/classroom' && (activeDashboardRole === 'student' || activeDashboardRole === 'learner')
+  const isStudentCourses = location.pathname === '/courses' && (activeDashboardRole === 'student' || activeDashboardRole === 'learner')
+  const isStudentProblems = location.pathname === '/problems' && (activeDashboardRole === 'student' || activeDashboardRole === 'learner')
+  const isPnewStudentPage = isStudentDashboard || isStudentClassroom || isStudentCourses || isStudentProblems
 
   useEffect(() => {
     const saved = localStorage.getItem('placify_theme') || 'dark'
@@ -149,7 +153,7 @@ function AppContent() {
   return (
     <div className="min-h-screen bg-base text-text-primary print:bg-white print:text-slate-900 print:min-h-0">
       <div className="print:hidden">
-        {!isStudentDashboard && <>
+        {!isPnewStudentPage && <>
           <Sidebar user={user} onSignOut={signOut} />
           <TopNav user={user} />
           <BottomNav />
@@ -190,10 +194,9 @@ function AppContent() {
         <Route
           path="/problems"
           element={
-            <PageWrapper>
-              <TopBar title="Problem Log" />
-              <Problems />
-            </PageWrapper>
+            isStudentProblems
+              ? <DashboardShell user={user} profile={profile} onSignOut={signOut} showProfile={false}><Problems /></DashboardShell>
+              : <PageWrapper><TopBar title="Problem Log" /><Problems /></PageWrapper>
           }
         />
         <Route
@@ -271,19 +274,17 @@ function AppContent() {
         <Route
           path="/classroom"
           element={
-            <PageWrapper>
-              <TopBar title="Classroom Vault" />
-              <ClassroomVault />
-            </PageWrapper>
+            isStudentClassroom
+              ? <DashboardShell user={user} profile={profile} onSignOut={signOut} showProfile={false}><ClassroomVault /></DashboardShell>
+              : <PageWrapper><TopBar title="Classroom Vault" /><ClassroomVault /></PageWrapper>
           }
         />
         <Route
           path="/courses"
           element={
-            <PageWrapper>
-              <TopBar title="Course Vault" />
-              <Courses />
-            </PageWrapper>
+            isStudentCourses
+              ? <DashboardShell user={user} profile={profile} onSignOut={signOut} showProfile={false}><Courses /></DashboardShell>
+              : <PageWrapper><TopBar title="Course Vault" /><Courses /></PageWrapper>
           }
         />
         <Route

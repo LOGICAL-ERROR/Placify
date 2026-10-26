@@ -5,6 +5,7 @@ import { useAuth } from '@/hooks/useAuth'
 import { useProblems } from '@/hooks/useProblems'
 import QuickLogInput from '@/components/problems/QuickLogInput'
 import ProblemList from '@/components/problems/ProblemList'
+import '@/styles/PnewContentPage.css'
 
 export default function Problems() {
   const { user } = useAuth()
@@ -34,7 +35,7 @@ export default function Problems() {
   })
 
   return (
-    <div className="space-y-6">
+    <div className="pnew-learning-page pnew-problem-log space-y-6">
       {/* Page Header */}
       <div className="flex items-center gap-3">
         <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-accent/15">

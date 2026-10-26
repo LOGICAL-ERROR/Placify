@@ -1,0 +1,30 @@
+.pnew-learning-page {
+  --bg-base: #f8fafc;
+  --bg-surface: rgba(255, 255, 255, .82);
+  --bg-card: #fff;
+  --bg-elevated: #f1f5f9;
+  --bg-hover: #e2e8f0;
+  --text-primary: #20242b;
+  --text-secondary: #59616a;
+  --text-muted: #78838f;
+  --border-color: rgba(224, 229, 234, .9);
+  --border-subtle: rgba(224, 229, 234, .82);
+  --accent-color: #8174e8;
+  --accent-light: #6f63dc;
+  min-height: calc(100vh - 48px);
+  padding: 12px 16px 60px;
+  color: #20242b;
+  font-family: 'DM Sans', Inter, ui-sans-serif, system-ui, sans-serif;
+}
+
+.pnew-learning-page button { color: #20242b; }
+.pnew-learning-page button[class*='bg-accent'],
+.pnew-learning-page button[class*='bg-purple-'],
+.pnew-learning-page button[class*='bg-semantic-green'] { border: 1px solid #e2e6e9; background: #fff; color: #20242b; box-shadow: 0 3px 10px rgba(31,41,55,.06); }
+.pnew-learning-page button[class*='bg-accent']:hover,
+.pnew-learning-page button[class*='bg-purple-']:hover,
+.pnew-learning-page button[class*='bg-semantic-green']:hover { border-color: #cbd2d8; background: #f8f9fb; color: #111; }
+
+@media (max-width: 680px) {
+  .pnew-learning-page { padding: 6px 2px 40px; }
+}

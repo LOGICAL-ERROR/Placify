@@ -1,0 +1,24 @@
+.pnew-classroom-heading { margin: 0 0 19px; }
+.pnew-classroom-heading p { margin: 0 0 4px; color: #78838f; font-size: 12px; font-weight: 600; letter-spacing: .08em; }
+.pnew-classroom-heading h1 { margin: 0; color: #20242b; font-size: clamp(30px, 4vw, 42px); font-weight: 800; line-height: 1.1; letter-spacing: -.055em; }
+.pnew-classroom-page > .space-y-6 > div:first-child,
+.pnew-classroom-page .max-w-xl.mx-auto,
+.pnew-classroom-page div[class*='bg-card'][class*='rounded-'],
+.pnew-classroom-page div[class*='rounded-2xl'][class*='border'][class*='shadow'],
+.pnew-classroom-page div[class*='bg-surface/70'] {
+  border-color: rgba(255, 255, 255, .66);
+  background: radial-gradient(ellipse at 18% 0%, rgba(255, 255, 255, .44), transparent 52%), linear-gradient(145deg, rgba(255, 255, 255, .3), rgba(255, 255, 255, .12) 58%, rgba(255, 255, 255, .2));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .82), inset 0 -1px 0 rgba(255, 255, 255, .28), 0 12px 30px rgba(42, 53, 69, .075);
+  -webkit-backdrop-filter: blur(22px) saturate(1.7);
+  backdrop-filter: blur(22px) saturate(1.7);
+}
+.pnew-classroom-page button { color: #20242b; }
+.pnew-classroom-page button[class*='bg-accent'],
+.pnew-classroom-page button[class*='bg-purple-'] { border: 1px solid #e2e6e9; background: #fff; color: #20242b; box-shadow: 0 3px 10px rgba(31,41,55,.06); }
+.pnew-classroom-page button[class*='bg-accent']:hover,
+.pnew-classroom-page button[class*='bg-purple-']:hover { border-color: #cbd2d8; background: #f8f9fb; color: #111; }
+
+@media (max-width: 680px) {
+  .pnew-classroom-page { padding: 6px 2px 40px; }
+  .pnew-classroom-heading { margin-bottom: 14px; }
+}

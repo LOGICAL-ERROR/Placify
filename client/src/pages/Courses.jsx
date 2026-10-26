@@ -13,6 +13,7 @@ import { apiCall } from '@/services/apiClient'
 import ShareDialog from '@/components/share/ShareDialog'
 import { Badge } from '@/components/ui/badge'
 import StudentCourseEnrollModal from '@/components/teacher/StudentCourseEnrollModal'
+import '@/styles/PnewContentPage.css'
 
 const VERILOG_DEFAULT_CODE = `module test;
     reg [3:0] a, b;
@@ -919,7 +920,7 @@ export default function Courses() {
   }
 
   return (
-    <div className="space-y-4 sm:space-y-6">
+    <div className="pnew-learning-page pnew-course-vault space-y-4 sm:space-y-6">
       {/* Premium Page Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 border-b border-border-subtle/50 pb-4 sm:pb-5">
         <div className="flex items-center gap-3">
